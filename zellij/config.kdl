@@ -16,7 +16,7 @@ keybinds {
     unbind "Ctrl t" // was Tab, now Alt-b
     unbind "Ctrl g" // was Locked, now Alt-g
     unbind "Ctrl q" // was Quit, now Alt-q
-    bind "Alt g" { SwitchToMode "locked"; }
+    bind "Ctrl g" { SwitchToMode "locked"; }
     bind "Alt q" { Quit; }
     bind "Alt t" { NewTab; }
     bind "Alt d" { NewPane "down";}
@@ -136,7 +136,7 @@ keybinds {
         bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
     }
     session {
-        bind "Alt o" { SwitchToMode "Normal"; }
+        bind "Ctrl o" { SwitchToMode "Normal"; }
         bind "Alt s" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
@@ -171,15 +171,15 @@ keybinds {
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
     }
     shared_except "locked" {
-        bind "Alt g" { SwitchToMode "Locked"; }
-        bind "Alt q" { Quit; }
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl q" { Quit; }
         bind "Alt n" { NewPane; }
         bind "Alt i" { MoveTab "Left"; }
-        bind "Alt o" { MoveTab "Right"; }
-        bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
-        bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
-        bind "Alt j" "Alt Down" { MoveFocus "Down"; }
-        bind "Alt k" "Alt Up" { MoveFocus "Up"; }
+        bind "Ctrl o" { MoveTab "Right"; }
+        bind "Ctrl h" "Alt Left" { MoveFocusOrTab "Left"; }
+        bind "Ctrl l" "Alt Right" { MoveFocusOrTab "Right"; }
+        bind "Ctrl j" "Alt Down" { MoveFocus "Down"; }
+        bind "Ctrl k" "Alt Up" { MoveFocus "Up"; }
         bind "Alt =" "Alt +" { Resize "Increase"; }
         bind "Alt -" { Resize "Decrease"; }
         bind "Alt [" { PreviousSwapLayout; }
@@ -189,7 +189,7 @@ keybinds {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
     }
     shared_except "pane" "locked" {
-        bind "Alt p" { SwitchToMode "Pane"; }
+        bind "Ctrl g" { SwitchToMode "Pane"; }
     }
     shared_except "resize" "locked" {
         bind "Alt n" { SwitchToMode "Resize"; }
@@ -198,7 +198,7 @@ keybinds {
         bind "Alt s" { SwitchToMode "Scroll"; }
     }
     shared_except "session" "locked" {
-        bind "Alt o" { SwitchToMode "Session"; }
+        bind "Ctrl o" { SwitchToMode "Session"; }
     }
     shared_except "tab" "locked" {
         bind "Alt t" { SwitchToMode "Tab"; }
