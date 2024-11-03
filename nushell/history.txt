@@ -1,0 +1,117 @@
+clear
+cd .config
+ls
+cd nushell
+nvim .
+clea
+clear
+ls
+mkdir ~/.cache/starship<\n>starship init nu | save -f ~/.cache/starship/init.nu
+use ~/.cache/starship/init.nu
+celar
+clear
+cd .config
+ls
+cd hypr
+nvim .
+clear
+ls
+cd .config
+ls
+cd nushell
+ls
+nvim .
+ls
+sudo pacman -S unzip
+clea
+rclear
+clear
+ls
+cd Nedlastinger
+cd
+cd .local/share/fonts
+sudo pacman -S ttf-firacode-nerd
+cd /etc/fonts/
+ls
+sudo nvim fonts.conf
+ls
+cd
+grep -R local.conf
+clear
+cd .config
+cd kitty
+ls
+nvim .
+ls
+nvim .
+cd .config
+ls
+nvim .
+cd .config
+ls
+cd kitty
+ls
+nvim .
+cd usr/local/share/fonts
+cd usr/local/share
+cd usr/local
+ls
+cd
+cd usr/local/share
+cd usr/local
+cd svoosh/local/share
+clear
+sudo pacman -S intellij-idea-community-edition
+ls
+cd waybar
+nvim .
+cd ..
+ls
+clear
+mkdir fontconfig
+cd fontconfig
+ls
+touch fonts.conf
+nvim .
+sudo reboot now
+sudo pacman -Syu
+clea
+clear
+sudo pacman -S iwgtk
+yay -S iwgtk
+clear
+sudo pacman -S jdtls
+nvim .
+clear
+ls
+clear
+ls
+rm -rf dotfiles
+clear
+cat /home/svoosh/.ssh/id_rsa.pub
+git config --global user.name "MagnusVestvik"<\n>
+git config --global user.email "magnusvestvik@proton.me"<\n>
+ls
+clear
+git clone git@github.com:MagnusVestvik/dotfiles.git
+ls
+cd dotfiles
+ls
+rm -rf hypr
+rm -rf nvim
+cd ..
+cd .config
+ls 
+cp hypr ../dotfiles
+ls
+cp -r ~/hypr ../dotfiles
+cp -r hypr ../dotfiles
+cd
+cd dotfiles
+ls
+cd ..
+cd .config
+ls
+cp -r kitty ../dotfiles
+cp -r nvim ../dotfiles
+cp -r waybar ../dotfiles
