@@ -19,3 +19,5 @@ dap.configurations.java = {
 		type = "java"
 	},
 }
+
+require("dap-go").setup()
