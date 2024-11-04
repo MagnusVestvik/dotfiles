@@ -47,17 +47,26 @@ cmp.setup.cmdline(":", {
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require("mason").setup()
+require("mason-tool-installer").setup({
+	ensure_installed = {
+		"java-debug-adapter",
+		"java-test",
+	}
+})
+
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls", "rust_analyzer" },
+	ensure_installed = { "lua_ls", "rust_analyzer", "jdtls", "gopls" },
 })
 
 local lspconfig = require("lspconfig")
 
 require("mason-lspconfig").setup_handlers({
 	function(server_name)
-		lspconfig[server_name].setup({
-			capabilities = capabilities,
-		})
+		if server_name ~= "jdtls" then
+			lspconfig[server_name].setup({
+				capabilities = capabilities,
+			})
+		end
 	end,
 	-- Custom setup for lua_ls
 	["lua_ls"] = function()
@@ -73,6 +82,7 @@ require("mason-lspconfig").setup_handlers({
 		})
 	end,
 })
+
 
 -- Attaches lsp to a buffer
 vim.api.nvim_create_autocmd("LspAttach", {
