@@ -1,0 +1,176 @@
+/* Kanagawa Dark Theme–inspired color definitions */
+@define-color main_color               #DCD7BA;  /* LotusWhite0 - off-white text */
+@define-color main_border_color        #363646;  /* A darker gray border */
+@define-color gradient_start           #2A2A37;  /* Dark background tone */
+@define-color gradient_end             #363646;  /* Slightly lighter dark tone */
+@define-color search_background        rgba(42, 42, 55, 0.8); /* Subdued dark w/ opacity */
+@define-color search_icon_color        #DCD7BA;  /* Same as main text for icons */
+@define-color typeahead_color          #98BB6C;  /* Spring green highlight */
+@define-color selected_background      rgba(152, 187, 108, 0.2); /* Subtle translucent green */
+@define-color ai_color                 #DCD7BA;  /* Off-white text for AI */
+@define-color ai_response_background   rgba(42, 42, 55, 0.8);  /* Dark background w/ opacity */
+
+/* Reset everything first */
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+  all: unset;
+}
+
+/* Window/Text Colors */
+#window {
+  color: @main_color;
+}
+
+/* Main container */
+#box {
+  border-radius: 2px;
+  background: linear-gradient(to bottom, @gradient_start, @gradient_end);
+  padding: 32px;
+  border: 1px solid @main_border_color;
+  box-shadow:
+    0 19px 38px rgba(0, 0, 0, 0.3),
+    0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* Search container */
+#search {
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 1px 2px rgba(0, 0, 0, 0.22);
+  background: @search_background;
+}
+
+#prompt {
+}
+
+/* Inputs */
+#password,
+#input,
+#typeahead {
+  padding: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 2px;
+}
+
+#input {
+  background: none;
+}
+
+#password {
+}
+
+#spinner {
+  padding: 8px;
+}
+
+/* Typeahead text color */
+#typeahead {
+  color: @typeahead_color;
+}
+
+#input placeholder {
+  opacity: 0.5;
+}
+
+/* Icons inside #input and #typeahead */
+#input > *:first-child,
+#typeahead > *:first-child {
+  margin-right: 16px;
+  margin-left: 4px;
+  color: @search_icon_color;
+  opacity: 0.2;
+}
+
+#input > *:last-child,
+#typeahead > *:last-child {
+  color: @search_icon_color;
+  opacity: 0.8;
+}
+
+/* List containers */
+#list {
+}
+
+child {
+  padding: 9px;
+  border-radius: 2px;
+}
+
+child:selected,
+child:hover {
+  background: @selected_background;
+}
+
+/* Items and labels */
+#item {
+}
+
+#icon {
+  margin-right: 8px;
+}
+
+#text {
+}
+
+#label {
+  font-weight: 500;
+}
+
+#sub {
+  opacity: 0.5;
+  font-size: 0.8em;
+}
+
+#activationlabel {
+}
+
+#bar {
+}
+
+.barentry {
+}
+
+/* Activation */
+.activation #activationlabel {
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+  opacity: 0.5;
+}
+
+/* AI/chat items */
+.aiItem {
+  padding: 10px;
+  border-radius: 2px;
+  color: @ai_color;
+}
+
+.aiItem.user {
+  background: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.aiItem.assistant {
+  background: @ai_response_background;
+}
+
