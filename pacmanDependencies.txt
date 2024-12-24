@@ -1,0 +1,11 @@
+git
+nvim
+gopls
+zellij
+firefox
+kitty
+waybar
+swww
+spotify-launcher
+nushell
+cmatrix
