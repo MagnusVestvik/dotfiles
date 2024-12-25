@@ -9,3 +9,9 @@ swww
 spotify-launcher
 nushell
 cmatrix
+wl-clipboard
+fzf
+lazygit
+nushell
+jdk21-openjdk
+jdk23-openjdk

@@ -1,117 +1,267 @@
-clear
-cd .config
-ls
-cd nushell
+cd .config/nushell
 nvim .
-clea
-clear
-ls
-mkdir ~/.cache/starship<\n>starship init nu | save -f ~/.cache/starship/init.nu
-use ~/.cache/starship/init.nu
-celar
-clear
-cd .config
-ls
-cd hypr
+config nu
 nvim .
 clear
 ls
-cd .config
-ls
-cd nushell
-ls
-nvim .
-ls
-sudo pacman -S unzip
-clea
-rclear
 clear
+cd etc/ly/
+cd /etc/ly/
 ls
-cd Nedlastinger
+sudo nvim .
+sudo pacman -S CMatrix
+sudo pacman -S cmatrix
 cd
-cd .local/share/fonts
-sudo pacman -S ttf-firacode-nerd
-cd /etc/fonts/
+cd dotfiles
 ls
-sudo nvim fonts.conf
+nvim .
+git add .
+git commit -m"added dependency lists"
+git push
+git config --global user.email "magnusvestvik@proton.me"
+git config --global user.name "MagnusVestvik"
+git push
+git add .
+git status
+git commit -m"added dependency lists"
+git push
+clear
+sudo reboot now
+sudo shutdown now
+git clone https://github.com/lgaboury/Sway-Waybar-Install-Script.git
+cd Sway-Waybar-Install-Script
+./install_sway_waybar.sh
+cd
+lks
+ls
+rm -rf Sway-Waybar-Install-Script/
+clear
+yay
+sudo pacman -Syu
+clear
+yay -S hyprland hyprlock hypridle hyprpicker xdg-desktop-portal-hyprland hyprshade \<\n>  gradience waybar rofi-lbonn-wayland-git libnotify swaync \<\n>  jq slurp grim grimblast-git hyprland-scratchpad-git xstow firefox firefox-pwa-bin \<\n>  foot unzip unrar nwg-look-bin qt6ct kvantum zathura vimiv networkmanager bluez-utils \<\n>  brightnessctl pipewire pipewire-pulse batify
+git clone git@github.com:niksingh710/gdots.git
+ls
+cd gdots
+ls
+cd .config
+ls
+mv waybar ../
+ls
+mv waybar ../
+ls
+nvim waybar
+cd waybar
+ls
+cd ..
+ls
+nvim waybar
+cd ../../
 ls
 cd
-grep -R local.conf
 clear
-cd .config
-cd kitty
 ls
-nvim .
-ls
-nvim .
+cd .configs
 cd .config
 ls
-nvim .
+rm -rf waybar
+cd ..
+ls
+cd gdots
+ls
+mv waybar ../.config
+sudo reboot now
+waybar
 cd .config
-ls
-cd kitty
-ls
-nvim .
-cd usr/local/share/fonts
-cd usr/local/share
-cd usr/local
-ls
-cd
-cd usr/local/share
-cd usr/local
-cd svoosh/local/share
-clear
-sudo pacman -S intellij-idea-community-edition
 ls
 cd waybar
-nvim .
-cd ..
 ls
-clear
-mkdir fontconfig
-cd fontconfig
-ls
-touch fonts.conf
+waybar
 nvim .
+ls
+cat style.css
+ls
+nvim .
+waybar
 sudo reboot now
-sudo pacman -Syu
-clea
-clear
-sudo pacman -S iwgtk
-yay -S iwgtk
-clear
-sudo pacman -S jdtls
+cd /etc/ly/
+ls
 nvim .
+sudo nvim .
+cd
 clear
+cd .config
+ls
+rm -rf waybar
+cd
+ls
+rm -rf gdots
+ls
+rm -rf dotfiles_kitties/
+rm -rf eww-widgets
+ls
+rm -rf Kanagawa-GKT-Theme/
+ls
+git clone git@github.com:Najam10/waybar.git
+ls
+cd waybar
+ls
+mv `waybar (vertical)/` ../
+cd
+ls
+mv `waybar (vertical)/` waybar
+ls
+mv waybar ../.config
+ls
+cd waybar
+ls
+cd
+mv waybar waybars
+cd waybars
+ls
+mv `waybar (vertical)/` ../
+cd
+ls
+mv `waybar (vertical)/` waybar
+mv waybar .config
+waybar
+clear
+sdls
+ls
+cd .config
+ls
+cd waybar
 ls
 clear
+nvim .
+waybar
+cd ../
 ls
-rm -rf dotfiles
-clear
-cat /home/svoosh/.ssh/id_rsa.pub
-git config --global user.name "MagnusVestvik"<\n>
-git config --global user.email "magnusvestvik@proton.me"<\n>
-ls
-clear
-git clone git@github.com:MagnusVestvik/dotfiles.git
+cp -r ../dotfiles
+cd
 ls
 cd dotfiles
 ls
-rm -rf hypr
-rm -rf nvim
-cd ..
+rm -rf waybar
+cd
 cd .config
-ls 
-cp hypr ../dotfiles
+cp -r waybar ../dotfiles
+cd
+cd dotfiles
 ls
-cp -r ~/hypr ../dotfiles
-cp -r hypr ../dotfiles
+git add .
+git commit -m"updated waybar"
+git push
+clear
+cd
+clear
+sudo reboot now
+cd .config/walker/themes
+ls
+nvim .
+clear
+ls
+cat default.css
+nvim .
+ls
+cd ..
+ls
+cd ..
 cd
 cd dotfiles
 ls
 cd ..
 cd .config
+cp -r walker ../dotfiles
+cd
+cd dotfiles
 ls
-cp -r kitty ../dotfiles
-cp -r nvim ../dotfiles
-cp -r waybar ../dotfiles
+git add .
+git commit -m"add walker files"
+git push
+sudo pacman -S spotify-launcher
+clear
+ls
+cd .config
+ls
+cd nushell/
+ls
+nvim .
+clear
+sudo shutdown now
+sudo pacman -S wl-clipboard
+cd dotfiles
+ls
+nvim .
+sudo pacman -Syu
+sudo reboot now
+sudo pacman -Syu
+sudo pacman -S pulseaudio
+systemctl --user list-units | grep pulseaudio<\n>
+systemctl --user start pulseaudio<\n>
+systemctl --user enable pulseaudio<\n>
+systemctl --user restart pulseaudio<\n>
+systemctl --user status pulseaudio<\n>
+sudo systemctl status pulseaudio
+pulseaudio --start<\n>
+sudo systemctl status pulseaudio
+pulseaudio --kill<\n>pulseaudio --start<\n>
+pulseaudio --kill<\n>
+pulseaudio --start
+sudo systemctl status pulseaudio
+cd .config
+ls
+ls | fzf
+sudo pacman -S fzf
+cd
+cd dotfiles
+ls
+nvim .
+cd
+cd .config
+ls | fzf
+cd pulse/
+ls
+nvim .
+sudo pacman -S pavucontrol
+pavucontrol
+sudo pacman -S pipewire
+sudo pacman -R pulseaudio
+sudo pacman -Rnc pulseaudio
+clear
+sudo pacman -S pipewire pipewire-pulse pipewire-alsa pipewire-jack<\n>
+systemctl --user stop pulseaudio<\n>systemctl --user disable pulseaudio<\n>systemctl --user mask pulseaudio<\n>
+systemctl --user stop pulseaudio.socket<\n>systemctl --user disable pulseaudio.socket<\n>
+systemctl --user enable pipewire<\n>systemctl --user start pipewire<\n>
+systemctl --user enable pipewire-pulse<\n>systemctl --user start pipewire-pulse<\n>
+systemctl --user status pipewire<\n>
+systemctl --user status pipewire-pulse<\n>
+pactl info<\n>
+ps aux | grep pipewire<\n>
+sudo pacman -S ps
+speaker-test -c 2<\n>
+sudo reboot now
+cd .config
+ls
+cd nushell
+nvim .
+mkdir ~/.cache/starship<\n>starship init nu | save -f ~/.cache/starship/init.nu
+nvim .
+use ~/.cache/starship/init.nu
+nvim .
+use ~/.cache/starship/init.nu
+nivm .
+cd .config
+ls
+cd nushell
+nvim .
+clear
+ls
+clear
+cd dotfiles
+ls
+ls | fzf
+ls
+rm -rf nushell
+cd
+cd .config
