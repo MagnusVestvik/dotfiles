@@ -1,5 +1,5 @@
 git
-nvim
+neovim
 gopls
 zellij
 firefox
@@ -15,3 +15,4 @@ lazygit
 nushell
 jdk21-openjdk
 jdk23-openjdk
+ghostty
