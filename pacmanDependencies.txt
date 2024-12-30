@@ -16,3 +16,5 @@ nushell
 jdk21-openjdk
 jdk23-openjdk
 ghostty
+rabbitmq
+npm
