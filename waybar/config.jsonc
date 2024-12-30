@@ -9,7 +9,8 @@
 		"custom/month",
 		"custom/day",
 		"custom/year",
-		"custom/week"
+		"custom/week",
+		"custom/weather"
 	],
 	"modules-center": [
 		"tray",
@@ -104,5 +105,11 @@
 			"󰔐",
 			"󱃂"
 		]
+	},
+	"custom/weather": {
+		"exec": "curl 'wttr.in/?format=%c+%t'",
+		"interval": 3600,
+		"format": "{}",
+		"tooltip": false
 	}
 }
