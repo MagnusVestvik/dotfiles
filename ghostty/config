@@ -1,0 +1,8 @@
+theme = Kanagawa Dragon
+font-size = 16
+font-family = FiraCode Nerd Font
+window-decoration = false
+background-opacity = 0.85
+shell-integration = zsh
+confirm-close-surface = false
+copy-on-select = true
