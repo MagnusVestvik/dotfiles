@@ -1,16 +1,35 @@
+source ~/.zplug/init.zsh
+# Install plugins if there are plugins that have not been installed
+
+
+# Autocomplete
+zplug "zsh-users/zsh-autosuggestions"
+
+# Enhanced ls formatting
+zplug "ogham/exa"
+
+# Zsh vim mode but supposedly better
+zplug "softmoth/zsh-vim-mode"
+zplug "trapd00r/zsh-syntax-highlighting-filetypes"
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+# Needs to be at the end
 eval "$(starship init zsh)"
-eval "$(zoxide init bash)"
-eval "$(fzf --bash)"
-alias ls='eza'
-alias folder='joshuto'
 
-export LDFLAGS="-L/opt/homebrew/opt/msodbcsql@13.1.9.2/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/msodbcsql@13.1.9.2/include"
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR"/shell-integration/zsh/ghostty-integration
+fi
 
-# bun completions
-[ -s "/Users/magnus/.bun/_bun" ] && source "/Users/magnus/.bun/_bun"
+# Vim mode
+bindkey -v enable 
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$PATH:/Users/magnus/.dotnet/tools"
+alias ls='eza -lh'
+alias docker='sudo docker'
+
+export EZA_CONFIG_DIR=.config/eza
+
