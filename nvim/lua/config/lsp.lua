@@ -83,6 +83,10 @@ require("mason-lspconfig").setup_handlers({
 	end,
 })
 
+lspconfig.hls.setup({
+	capabilities = capabilities,
+
+})
 
 -- Attaches lsp to a buffer
 vim.api.nvim_create_autocmd("LspAttach", {
