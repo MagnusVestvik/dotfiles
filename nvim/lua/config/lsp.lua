@@ -1,48 +1,4 @@
-local cmp = require("cmp")
 local luasnip = require("luasnip")
-
-cmp.setup({
-	snippet = {
-		expand = function(args)
-			luasnip.lsp_expand(args.body)
-		end,
-	},
-	window = {
-		completion = cmp.config.window.bordered(),
-		documentation = cmp.config.window.bordered(),
-	},
-	mapping = cmp.mapping.preset.insert({
-		["<C-b>"] = cmp.mapping.scroll_docs(-4),
-		["<C-f>"] = cmp.mapping.scroll_docs(4),
-		["<C-Space>"] = cmp.mapping.complete(),
-		["<C-e>"] = cmp.mapping.abort(),
-		["<CR>"] = cmp.mapping.confirm({ select = true }),
-	}),
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "supermaven" },
-	}, {
-		{ name = "buffer" },
-	}),
-})
-
-cmp.setup.cmdline({ "/", "?" }, {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = {
-		{ name = "buffer" },
-	},
-})
-
-cmp.setup.cmdline(":", {
-	mapping = cmp.mapping.preset.cmdline(),
-	sources = cmp.config.sources({
-		{ name = "path" },
-	}, {
-		{ name = "cmdline" },
-	}),
-	matching = { disallow_symbol_nonprefix_matching = false },
-})
 
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -51,7 +7,7 @@ require("mason-tool-installer").setup({
 	ensure_installed = {
 		"java-debug-adapter",
 		"java-test",
-	}
+	},
 })
 
 require("mason-lspconfig").setup({
@@ -85,7 +41,6 @@ require("mason-lspconfig").setup_handlers({
 
 lspconfig.hls.setup({
 	capabilities = capabilities,
-
 })
 
 -- Attaches lsp to a buffer
@@ -163,13 +118,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- sonarlint
-require('sonarlint').setup({
+require("sonarlint").setup({
 	server = {
 		cmd = {
-			'sonarlint-language-server',
+			"sonarlint-language-server",
 			-- Ensure that sonarlint-language-server uses stdio channel
-			'-stdio',
-			'-analyzers',
+			"-stdio",
+			"-analyzers",
 			-- paths to the analyzers you need, using those for python and java in this example
 			vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarpython.jar"),
 			vim.fn.expand("$MASON/share/sonarlint-analyzers/sonarcfamily.jar"),
@@ -180,19 +135,19 @@ require('sonarlint').setup({
 			-- The default for sonarlint is {}, this is just an example
 			sonarlint = {
 				rules = {
-					['typescript:S101'] = { level = 'on', parameters = { format = '^[A-Z][a-zA-Z0-9]*$' } },
-					['typescript:S103'] = { level = 'on', parameters = { maximumLineLength = 180 } },
-					['typescript:S106'] = { level = 'on' },
-					['typescript:S107'] = { level = 'on', parameters = { maximumFunctionParameters = 7 } }
-				}
-			}
-		}
+					["typescript:S101"] = { level = "on", parameters = { format = "^[A-Z][a-zA-Z0-9]*$" } },
+					["typescript:S103"] = { level = "on", parameters = { maximumLineLength = 180 } },
+					["typescript:S106"] = { level = "on" },
+					["typescript:S107"] = { level = "on", parameters = { maximumFunctionParameters = 7 } },
+				},
+			},
+		},
 	},
 	filetypes = {
 		-- Tested and working
-		'python',
-		'cpp',
+		"python",
+		"cpp",
 		-- Requires nvim-jdtls, otherwise an error message will be printed
-		'java',
-	}
+		"java",
+	},
 })
