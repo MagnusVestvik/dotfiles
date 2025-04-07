@@ -5,7 +5,7 @@ vim.keymap.set("n", "<leader>tdb", function()
 end, { desc = "Toggle Dbee" })
 
 vim.keymap.set("n", "<leader>sdb", function()
-	dbee.focus()
+	dbee.setup()
 end, { desc = "Setup dbee" })
 
 vim.keymap.set("n", "<leader>eq", function()

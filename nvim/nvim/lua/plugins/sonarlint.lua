@@ -1,1 +1,0 @@
-return { "danarth/sonarlint.nvim" }
