@@ -1,4 +1,4 @@
-local dap, dapui, masondap = require("dap"), require("dapui"), require("mason-nvim-dap")
+local dap, dapui = require("dap"), require("dapui")
 
 require("dapui").setup()
 require("dap-go").setup()
@@ -16,19 +16,16 @@ dap.listeners.before.event_exited.dapui_config = function()
 	dapui.close()
 end
 
-vim.keymap.set("n", "<Leader>du", function()
-	dapui.toggle()
-end, { desc = "Toggle DAP UI" })
-
+vim.keymap.set("n", "<Leader>dt", ":DapUiToggle<CR>", {})
 vim.keymap.set("n", "<Leader>db", dap.toggle_breakpoint, {})
 vim.keymap.set("n", "<Leader>dc", dap.continue, {})
+vim.keymap.set("n", "<Leader>dr", ":lua require('dapui').open({reset = true})<CR>", {})
 
 vim.fn.sign_define(
 	"DapBreakpoint",
 	{ text = "⏺", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
 )
 
--- To setup custom java debugging
 dap.configurations.java = {
 	{
 		-- You need to extend the classPath to list your dependencies.
@@ -50,4 +47,4 @@ dap.configurations.java = {
 	},
 }
 
-masondap.setup()
+dap.defaults.java.exception_breakpoints = { "Notice", "Warning", "Error", "Exception" }
