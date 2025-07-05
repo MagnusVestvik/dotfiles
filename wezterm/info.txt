@@ -1,0 +1,3 @@
+to see logs use:
+export WZTERM_LOG="smart_workspace_switcher=debug,window=debug"
+wezterm start
