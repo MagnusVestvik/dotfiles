@@ -24,7 +24,8 @@ hyprlink.enable_hyprlinks(config, wezterm)
 
 wezterm.on("smart_workspace_switcher.workspace_switcher.created", function(window, workspace)
     wezterm.log_info("THIS IS EMITTED FROM THE CALLBACK")
-    window:spawn_tab {}:set_title("GIT")
+    window:active_tab():set_title("NVIM")
+    window:spawn_tab { args = { "lazygit" } }:set_title("GIT")
     window:spawn_tab {}:set_title("General")
 end)
 

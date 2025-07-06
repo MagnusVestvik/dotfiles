@@ -32,6 +32,11 @@ function keybinds.setup_keybinds(config, workspace_switcher, wezterm)
             mods = "CTRL",
             action = wezterm.action.ActivateTab(2),
         },
+        {
+            key = "e",
+            mods = "ALT",
+            action = wezterm.action.ShowTabNavigator,
+        },
     }
 end
 
