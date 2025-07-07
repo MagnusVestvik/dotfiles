@@ -2,6 +2,16 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = { "lua_ls", "rust_analyzer", "gopls" },
 })
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+-- Configure all Mason-installed LSPs automatically
+require("mason-lspconfig").setup_handlers({
+  -- Default handler for all servers
+  function(server_name)
+    require("lspconfig")[server_name].setup({
+      capabilities = capabilities,
+    })
+  end,
 require("java").setup()
 require("lspconfig").jdtls.setup({})
 
