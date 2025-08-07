@@ -1,3 +1,4 @@
+local vim = vim
 vim.opt.clipboard:append("unnamedplus")
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -18,3 +19,12 @@ vim.o.wrap = false
 -- preview - show extra information about currently selected completion
 -- noinsert - do not insert any text for match until the user selects it from the menu
 vim.opt.completeopt = "menuone,preview,noselect"
+
+vim.o.winborder = "rounded"
+
+vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
+vim.api.nvim_set_hl(0, "FloatBorder", { link = "Normal" })
+
+
+
+vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e2e" }) -- no transparency or weird padding

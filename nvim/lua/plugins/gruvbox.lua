@@ -1,1 +1,1 @@
-return { "sainnhe/gruvbox-material" }
+return { "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... }

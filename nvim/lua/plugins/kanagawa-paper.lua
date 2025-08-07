@@ -1,8 +1,8 @@
 return {
-  "thesimonho/kanagawa-paper.nvim",
-  lazy = false,
-  priority = 1000,
-  opts = {
-      transparent = true
-  },
+    "thesimonho/kanagawa-paper.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+        transparent = false
+    },
 }
