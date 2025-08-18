@@ -9,11 +9,7 @@ vim.opt.autoindent = false
 vim.opt.scrolloff = 10
 vim.opt.smartindent = false
 vim.opt.cindent = false
-vim.opt.timeoutlen = 0
-vim.opt.updatetime = 0
 vim.wo.wrap = false
-vim.opt.swapfile = false
-vim.bo.swapfile = false
 vim.o.wrap = false
 -- menuone - show popup menu also when there is only one match available
 -- preview - show extra information about currently selected completion

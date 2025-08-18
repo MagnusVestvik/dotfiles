@@ -1,4 +1,2 @@
-return {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-}
+return{"nvim-treesitter/nvim-treesitter"}
+
