@@ -37,6 +37,12 @@ function keybinds.setup_keybinds(config, workspace_switcher, wezterm)
             mods = "ALT",
             action = wezterm.action.ShowTabNavigator,
         },
+        {
+         key = 's',
+         mods = 'CTRL',
+         action = wezterm.action.ShowLauncherArgs { flags = 'FUZZY|DOMAINS' },
+        },
+        { key = 'q', mods = 'CTRL', action = wezterm.action.QuitApplication },
     }
 end
 

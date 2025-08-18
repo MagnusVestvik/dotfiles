@@ -1,9 +1,10 @@
 local general_settings = {}
-
+local wezterm = require 'wezterm'
 function general_settings.setup_general_settings(config)
     config.default_prog = { 'fish' }
 
     config.font_size = 20
+    config.ssh_domains = wezterm.default_ssh_domains()
 
     -- change from ugly bar
 
@@ -17,7 +18,9 @@ function general_settings.setup_general_settings(config)
 
     config.window_close_confirmation = "NeverPrompt"
 
-    config.hide_tab_bar_if_only_one_tab = true
+    config.term = "xterm-256color"
+
+    config.quit_when_all_windows_are_closed = true
 end
 
 return general_settings
