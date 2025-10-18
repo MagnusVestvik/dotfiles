@@ -404,6 +404,55 @@ tooltip label {
 }
 
 /* -----------------------------------------------------------------------------
+* Bluetooth
+* -------------------------------------------------------------------------- */
+
+#bluetooth {
+	background: @background-primary;
+	color: @blue;
+	border-left: 4px solid @blue;
+	margin: 6px 2px;
+	padding: 8px 12px;
+	border-radius: 12px;
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+	color: @subtext0;
+	border-left: 4px solid @subtext0;
+}
+
+#bluetooth.on {
+	color: @blue;
+	border-left: 4px solid @blue;
+}
+
+#bluetooth.connected {
+	color: @green;
+	border-left: 4px solid @green;
+}
+
+#bluetooth.discoverable,
+#bluetooth.discovering {
+	color: @yellow;
+	border-left: 4px solid @yellow;
+}
+
+#bluetooth.pairable {
+	color: @mauve;
+	border-left: 4px solid @mauve;
+}
+
+#bluetooth.no-controller {
+	color: @error;
+	border-left: 4px solid @error;
+}
+
+#bluetooth:hover {
+	opacity: 0.8;
+}
+
+/* -----------------------------------------------------------------------------
 * Idle inhibitor
 * -------------------------------------------------------------------------- */
 
