@@ -28,5 +28,3 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e1e2e" }) -- no transparency or 
 vim.opt.termguicolors = true
 require("bufferline").setup {}
 vim.g.copilot_enabled = false
-
-require("toggleterm").setup()
