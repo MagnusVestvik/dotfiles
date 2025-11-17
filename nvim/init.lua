@@ -8,6 +8,7 @@ require("mini.operators").setup()
 require("mini.pairs").setup()
 require("mini.surround").setup()
 require("mini.indentscope").setup()
+require("quicker").setup()
 
 require("general")
 require("keybind")

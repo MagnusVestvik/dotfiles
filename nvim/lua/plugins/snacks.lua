@@ -27,11 +27,24 @@ return {
             show_delay = 5000,
             limit_live = 10000,
             layout = {
-                cycle = true,
-                --- Use the default layout or vertical if the window is too narrow
-                preset = function()
-                    return vim.o.columns >= 120 and "default" or "vertical"
-                end,
+                -- TODO: Somthing is wrong here and should be fixed
+                --backdrop = false,
+                --row = 1,
+                --width = 0.4,
+                --min_width = 80,
+                --height = 0.8,
+                --border = "none",
+                --box = "vertical",
+                --{ win = "preview", title = "{preview}", height = 0.4, border = true },
+                --{
+                --    box = "vertical",
+                --    border = true,
+                --    title = "{title} {live} {flags}",
+                --    title_pos = "center",
+                --    { win = "input", height = 1,     border = "bottom" },
+                --    { win = "list",  border = "none" },
+                --},
+
             },
             ---@class snacks.picker.matcher.Config
             matcher = {
@@ -352,7 +365,8 @@ return {
                 grep = false,     -- show file debug info
                 proc = false,     -- show proc debug info
                 extmarks = false, -- show extmarks errors
-            }
+            },
+
 
         },
 
