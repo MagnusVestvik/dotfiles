@@ -1,0 +1,23 @@
+{ config, lib, pkgs, ... }:
+
+{
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
+   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+      "steam"
+      "steam-original"
+      "steam-unwrapped"
+      "steam-run"
+    ];
+ # packages that only make sense on a desktop
+  environment.systemPackages = with pkgs; [
+    firefox
+    spotify
+    steam-tui
+    discord
+  ];
+}
