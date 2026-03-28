@@ -1,36 +1,19 @@
-local vim = vim
+require("plugins")
+require("settings.gitsigns")
+require("settings.glimmer")
+require("settings.mason")
+require("settings.yazi")
+require("settings.mini_surround")
 
-require("config.lazy")
+require("options")
 
-require("mason").setup()
-require("mini.ai").setup()
-require("mini.operators").setup()
-require("mini.pairs").setup()
-require("mini.surround").setup()
-require("mini.indentscope").setup()
-require("quicker").setup()
+require("lsp.lspsetup")
+require("lsp.completion")
+require("lsp.inline-diagnostics")
+require("lsp.conform_formatting")
+require("dap.dapsetup")
 
-require("general")
-require("keybind")
-require("dapconfig")
-require("lsp")
-require("treesitter")
-require("format")
-require("git")
-require("navigation")
-require("glimmer")
-require("diagnostics")
+require("ui.colorschemes")
 
-local blink = require("blink.cmp")
-
-blink.setup({
-    keymap = {
-        preset = "default", -- or "super-tab", "none"
-    },
-    sources = {
-        default = { "lsp", "path", "snippets", "buffer" },
-    },
-    completion = {
-        documentation = { auto_show = true },
-    },
-})
+-- keymaps should be loaded last
+require("keymaps")

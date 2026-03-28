@@ -108,6 +108,9 @@ config.settings = {
                 profile = "GoogleStyle",
             },
         },
+        inlayHints = {
+            parameterNames = { enabled = "all" }
+        },
         eclipse = {
             downloadSources = true,
         },
@@ -161,9 +164,14 @@ config.settings = {
         configuration = {
             runtimes = {
                 {
+                    name = "JavaSE-25",
+                    path = "/usr/lib/jvm/java-25-openjdk-amd64",
+                },
+                {
                     name = "JavaSE-21",
                     path = "/usr/lib/jvm/java-21-openjdk-amd64",
                 },
+
             },
         },
         project = {
