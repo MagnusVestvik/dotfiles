@@ -3,7 +3,10 @@ require("settings.gitsigns")
 require("settings.glimmer")
 require("settings.mason")
 require("settings.yazi")
-require("settings.mini_surround")
+require("settings.mini")
+require("settings.neotest")
+require("settings.utils")
+require("settings.symbol-usage")
 
 require("options")
 

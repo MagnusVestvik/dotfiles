@@ -3,21 +3,23 @@ vim.diagnostic.config({
 		prefix = "●",
 	},
 	severity_sort = true,
-	signs = {
-		text = {
-			[vim.diagnostic.severity.ERROR] = "",
-			[vim.diagnostic.severity.WARN] = "",
-			[vim.diagnostic.severity.INFO] = "",
-			[vim.diagnostic.severity.HINT] = "",
-		},
-	},
+	signs = false,
+	-- add this again to be able to see signs in gutterline
+	--signs = {
+	--	text = {
+	--		[vim.diagnostic.severity.ERROR] = "",
+	--		[vim.diagnostic.severity.WARN] = "",
+	--		[vim.diagnostic.severity.INFO] = "",
+	--		[vim.diagnostic.severity.HINT] = "",
+	--	},
+	--},
 })
 
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
 require("nvim-treesitter").setup({
 	-- List of languages to ensure parsers are installed for
-	ensure_installed = { "c", "lua", "go" }, -- Add languages you use
+	ensure_installed = { "c", "lua", "go", "java" }, -- Add languages you use
 	-- Automatically install missing parsers
 	auto_install = true,
 	-- Enable Treesitter features
@@ -100,3 +102,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 	end,
 })
+
+-- linting
+require('sonarqube').setup({})

@@ -11,6 +11,8 @@ vim.opt.undofile = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.termguicolors = true
-
+vim.opt.swapfile = false
+require("vim._core.ui2").enable({})
+vim.o.cmdheight = 0 -- Needed for tiny-cmdline plugin
 
 vim.env.PATH = vim.env.PATH .. ":/snap/bin"

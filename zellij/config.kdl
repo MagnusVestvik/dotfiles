@@ -7,11 +7,11 @@ keybinds clear-defaults=true {
         bind "Ctrl g" { SwitchToMode "normal"; }
     }
     normal {
-        bind "Ctrl e" { LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij-sessionizer.wasm" {
+        bind "Alt e" { LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij-sessionizer.wasm" {
                 floating true
                 move_to_focused_tab true
                 cwd "/"
-                root_dirs "/home/svoosh/dev/"
+                root_dirs "/home/mvestvik/dev"
                 session_layout "myCustomLayout"
             }; SwitchToMode "normal";
         }
@@ -33,7 +33,7 @@ keybinds clear-defaults=true {
         bind "l" { MoveFocus "right"; }
         bind "n" { NewPane; SwitchToMode "normal"; }
         bind "p" { SwitchFocus; }
-        bind "Ctrl p" { SwitchToMode "normal"; }
+        bind "Alt p" { SwitchToMode "normal"; }
         bind "r" { NewPane "right"; SwitchToMode "normal"; }
         bind "s" { NewPane "stacked"; SwitchToMode "normal"; }
         bind "w" { ToggleFloatingPanes; SwitchToMode "normal"; }
@@ -63,7 +63,7 @@ keybinds clear-defaults=true {
         bind "n" { NewTab; SwitchToMode "normal"; }
         bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
         bind "s" { ToggleActiveSyncTab; SwitchToMode "normal"; }
-        bind "Ctrl t" { SwitchToMode "normal"; }
+        bind "Alt t" { SwitchToMode "normal"; }
         bind "x" { CloseTab; SwitchToMode "normal"; }
         bind "tab" { ToggleTab; }
     }
@@ -83,7 +83,7 @@ keybinds clear-defaults=true {
         bind "j" { Resize "Increase down"; }
         bind "k" { Resize "Increase up"; }
         bind "l" { Resize "Increase right"; }
-        bind "Ctrl n" { SwitchToMode "normal"; }
+        //bind "Alt n" { SwitchToMode "normal"; }
     }
     move {
         bind "left" { MovePane "left"; }
@@ -125,7 +125,7 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "Ctrl o" { SwitchToMode "normal"; }
+        bind "Alt o" { SwitchToMode "normal"; }
         bind "p" {
             LaunchOrFocusPlugin "plugin-manager" {
                 floating true
@@ -149,33 +149,33 @@ keybinds clear-defaults=true {
         }
     }
     shared_except "locked" {
-        bind "Alt left" { MoveFocusOrTab "left"; }
-        bind "Alt down" { MoveFocus "down"; }
-        bind "Alt up" { MoveFocus "up"; }
-        bind "Alt right" { MoveFocusOrTab "right"; }
-        bind "Alt +" { Resize "Increase"; }
-        bind "Alt -" { Resize "Decrease"; }
-        bind "Alt =" { Resize "Increase"; }
-        bind "Alt [" { PreviousSwapLayout; }
-        bind "Alt ]" { NextSwapLayout; }
-        bind "Alt f" { ToggleFloatingPanes; }
-        bind "Ctrl g" { SwitchToMode "locked"; }
         bind "Alt h" { MoveFocusOrTab "left"; }
-        bind "Alt i" { MoveTab "left"; }
         bind "Alt j" { MoveFocus "down"; }
         bind "Alt k" { MoveFocus "up"; }
         bind "Alt l" { MoveFocusOrTab "right"; }
-        bind "Alt n" { NewPane; }
-        bind "Alt o" { MoveTab "right"; }
-        bind "Alt p" { TogglePaneInGroup; }
-        bind "Alt Shift p" { ToggleGroupMarking; }
-        bind "Ctrl q" { Quit; }
+        //bind "Alt +" { Resize "Increase"; }
+        //bind "Alt -" { Resize "Decrease"; }
+        //bind "Alt =" { Resize "Increase"; }
+        //bind "Alt [" { PreviousSwapLayout; }
+        //bind "Alt ]" { NextSwapLayout; }
+        //bind "Alt f" { ToggleFloatingPanes; }
+        //bind "Ctrl g" { SwitchToMode "locked"; }
+        //bind "Alt h" { MoveFocusOrTab "left"; }
+        //bind "Alt i" { MoveTab "left"; }
+        //bind "Alt j" { MoveFocus "down"; }
+        //bind "Alt k" { MoveFocus "up"; }
+        //bind "Alt l" { MoveFocusOrTab "right"; }
+        //bind "Alt n" { NewPane; }
+        //bind "Alt o" { MoveTab "right"; }
+        //bind "Alt p" { TogglePaneInGroup; }
+        //bind "Alt Shift p" { ToggleGroupMarking; }
+        //bind "Ctrl q" { Quit; }
     }
     shared_except "locked" "move" {
-        bind "Ctrl h" { SwitchToMode "move"; }
+        //bind "Ctrl h" { SwitchToMode "move"; }
     }
     shared_except "locked" "session" {
-        bind "Ctrl o" { SwitchToMode "session"; }
+        bind "Alt o" { SwitchToMode "session"; }
     }
     shared_except "locked" "scroll" "search" "tmux" {
         bind "Ctrl space" { SwitchToMode "tmux"; }
@@ -184,13 +184,13 @@ keybinds clear-defaults=true {
         bind "Ctrl s" { SwitchToMode "scroll"; }
     }
     shared_except "locked" "tab" {
-        bind "Ctrl t" { SwitchToMode "tab"; }
+        bind "Alt t" { SwitchToMode "tab"; }
     }
     shared_except "locked" "pane" {
-        bind "Ctrl p" { SwitchToMode "pane"; }
+        bind "Alt p" { SwitchToMode "pane"; }
     }
     shared_except "locked" "resize" {
-        bind "Ctrl n" { SwitchToMode "resize"; }
+        bind "Alt r" { SwitchToMode "resize"; }
     }
     shared_except "normal" "locked" "entersearch" {
         bind "enter" { SwitchToMode "normal"; }
@@ -200,6 +200,15 @@ keybinds clear-defaults=true {
     }
     shared_among "pane" "tmux" {
         bind "x" { CloseFocus; SwitchToMode "normal"; }
+    }
+
+    shared_except "locked" {
+        bind "Alt f" {
+            LaunchPlugin "filepicker" {
+                //floating true // uncomment this to have the filepicker opened in a floating window
+                close_on_selection true // comment this out to have the filepicker remain open even after selecting a file
+            };
+        }
     }
     shared_among "scroll" "search" {
         bind "PageDown" { PageScrollDown; }
@@ -256,14 +265,6 @@ keybinds clear-defaults=true {
         bind "o" { FocusNextPane; }
         bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
-        //bind "g" { LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij-sessionizer.wasm" {
-        //        floating true
-        //        move_to_focused_tab true
-        //        cwd "/"
-        //        root_dirs "/home/svoosh/dev/"
-        //        session_layout "myCustomLayout"
-        //    }; SwitchToMode "Locked";
-        //}
     }
 }
 
@@ -384,7 +385,7 @@ pane_frames false
 // that will be used by default if this option is not set.
 // Examples:
 //
-// copy_command "xclip -selection clipboard" // x11
+ copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 // 
@@ -402,7 +403,7 @@ pane_frames false
 // Enable automatic copying (and clearing) of selection when releasing mouse
 // Default: true
 // 
-// copy_on_select true
+ copy_on_select true
  
 // Path to the default editor to use to edit pane scrollbuffer
 // Default: $EDITOR or $VISUAL

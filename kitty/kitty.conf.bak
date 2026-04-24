@@ -1,21 +1,17 @@
-# Default colorshell's kitty configuration, 
-# please use the user.conf available in this
-# same directory.
-
-include $XDG_CACHE_HOME/wal/colors-kitty.conf
-include ./user.conf
-
-# Dinamically update colorscheme with pywal16
-allow_remote_control yes
-listen_on unix:@kitty
-
-font_size 22.0
-font_family MonoLisa
-
-shell fish
-
-background_opacity 0.6
 # BEGIN_KITTY_THEME
-# Tokyo Night
+# Base2Tone Drawbridge Dark
 include current-theme.conf
 # END_KITTY_THEME
+term xterm-256color
+
+font_family MonoLisa
+
+shell /usr/bin/fish
+
+font_size 16.0   
+
+background_opacity 1.0
+
+copy_on_select clipboard
+
+map ctrl+e send_text all zi\n
