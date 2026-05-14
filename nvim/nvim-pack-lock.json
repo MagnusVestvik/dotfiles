@@ -25,6 +25,14 @@
       "rev": "a68ffa6af98bf1fc88f33a071c51a188ec85c725",
       "src": "https://github.com/scottmckendry/cyberdream.nvim"
     },
+    "diffview.nvim": {
+      "rev": "385f26fd6a50e3b0b11cc9623f1f96cde00ef08c",
+      "src": "https://github.com/dlyongemallo/diffview.nvim"
+    },
+    "dressing.nvim": {
+      "rev": "2d7c2db2507fa3c4956142ee607431ddb2828639",
+      "src": "https://github.com/stevearc/dressing.nvim"
+    },
     "fff.nvim": {
       "rev": "eb577ea4f39f7b9296ff8c6b4bf2b2899d017ded",
       "src": "https://github.com/dmtrKovalenko/fff.nvim"
@@ -32,6 +40,10 @@
     "fzf-lua": {
       "rev": "bde73a6886b607246095aa59f396de5e0d036890",
       "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitlab.nvim": {
+      "rev": "f3b2c9268e8eb7bd592b3a1e60d1babb6cba44d6",
+      "src": "https://github.com/harrisoncramer/gitlab.nvim"
     },
     "gitsigns.nvim": {
       "rev": "50c205548d8b037b7ff6378fca6d21146f0b6161",
@@ -85,6 +97,10 @@
       "rev": "ece3cf36e1a2c20f19f8224bb37dffb921e2a13f",
       "src": "https://github.com/rcasia/neotest-java"
     },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim-dap": {
       "rev": "2a8799ad91a1495c6bdf753f9b2179b3ff0f5bba",
       "src": "https://github.com/mfussenegger/nvim-dap"
@@ -117,6 +133,10 @@
       "rev": "da8bf82a534506989c7bc9189552b5fba958f0c6",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
+    "nvim-web-devicons": {
+      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
     "oil.nvim": {
       "rev": "0fcc83805ad11cf714a949c98c605ed717e0b83e",
       "src": "https://github.com/stevearc/oil.nvim"
@@ -132,6 +152,10 @@
     "snacks.nvim": {
       "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
       "src": "https://github.com/folke/snacks.nvim"
+    },
+    "solarized-osaka.nvim": {
+      "rev": "f675d9a5c58f3b0d6158d665a623f81a62e7bdaf",
+      "src": "https://github.com/craftzdog/solarized-osaka.nvim"
     },
     "sonarlint.nvim": {
       "rev": "acd09b78969ddc965a7ddf59abb9d9eec5ecd94f",

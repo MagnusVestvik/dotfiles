@@ -55,5 +55,6 @@ vim.pack.add({
 	{ src = "https://github.com/rachartier/tiny-cmdline.nvim" },
 	{ src = "https://github.com/rebelot/kanagawa.nvim" },
 	{ src = "https://github.com/MagnusVestvik/tiny-code-action.nvim" },
+	{ src = "https://github.com/craftzdog/solarized-osaka.nvim" },
 
 })

@@ -72,8 +72,15 @@ config.cmd = {
 	"-Dosgi.bundles.defaultStartLevel=4",
 	"-Declipse.product=org.eclipse.jdt.ls.core.product",
 	"-Dlog.protocol=true",
-	"-Dlog.level=ALL",
-	"-Xmx1g",
+	"-Dlog.level=Warn",
+	"-Xmx4g",
+	"-Xms2g",
+	"-XX:+UseZGC",
+	"-XX:+OptimizeStringConcat",
+	"-XX:+UseCompressedOops",
+	"-XX:+TieredCompilation",
+	"-XX:InitialCodeCacheSize=128m",
+	"-XX:ReservedCodeCacheSize=256m",
 	"-javaagent:" .. lombok_path,
 	"--add-modules=ALL-SYSTEM",
 	"--add-opens",
@@ -108,9 +115,10 @@ config.settings = {
 				profile = "GoogleStyle",
 			},
 		},
-		inlayHints = {
-			parameterNames = { enabled = "all" }
-		},
+		-- needs to be enabled here aswell as in lspsetup for inlay hints to work
+		--inlayHints = {
+		--	parameterNames = { enabled = "all" }
+		--},
 		eclipse = {
 			downloadSources = true,
 		},

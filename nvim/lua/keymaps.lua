@@ -1,7 +1,6 @@
 local snacks = require('snacks')
 local jdtls  = require('jdtls')
 local neogit = require('neogit')
-local cchat  = require('CopilotChat')
 
 -- General
 vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
@@ -54,11 +53,8 @@ vim.keymap.set("n", "em", jdtls.extract_method,
 	{ desc = "[e]xtract [m]ethod jdtls" })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic [E]rror messages" })
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
---vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
---vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-vim.keymap.set({ "n", "x" }, "<leader>ca", function()
-	require("tiny-code-action").code_action()
-end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("n", "<leader>da", function()
 	Snacks.picker.diagnostics()
 end, { desc = "Diagnostics (Snacks)" })

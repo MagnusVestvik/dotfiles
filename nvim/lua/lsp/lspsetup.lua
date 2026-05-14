@@ -32,11 +32,11 @@ require("nvim-treesitter").setup({
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("gopls")
 -- inlay hints
-vim.api.nvim_create_autocmd({ "BufEnter", }, {
-	callback = function()
-		vim.lsp.inlay_hint.enable()
-	end,
-})
+--vim.api.nvim_create_autocmd({ "BufEnter", }, {
+--	callback = function()
+--		vim.lsp.inlay_hint.enable()
+--	end,
+--})
 
 -- get rid of annoying Undefined global `vim`
 vim.lsp.config('lua_ls', {
