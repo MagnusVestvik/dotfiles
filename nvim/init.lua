@@ -9,30 +9,6 @@ vim.diagnostic.config({ virtual_text = true })
 
  vim.cmd 'colorscheme catppuccin'
 
--- Keybinds
-vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
-vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
-vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
-vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
-vim.api.nvim_set_keymap("n", "gh", "^", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "gl", "$", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "gh", "^", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "gl", "$", { noremap = true, silent = true })
-
-vim.keymap.set("n", "-", "<cmd>Explore<CR>") 
-vim.keymap.set("n", "nh", "<cmd>noh<CR>")
-
-
--- Lsp keymaps
-vim.keymap.set("n", "gd", vim.lsp.buf.type_definition)
-vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
-vim.keymap.set("n", "rn", vim.lsp.buf.rename)
-vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
-vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
-vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
-vim.keymap.set("n", "<leader>wd", vim.lsp.buf.workspace_diagnostics)
-vim.keymap.set("n", "fb", vim.lsp.buf.format)
-
 -- autocomplete options
 vim.o.complete = ".,o" -- use buffer and omnifunc
 vim.o.completeopt = "fuzzy,menuone,noselect" -- add 'popup' for docs (sometimes)
@@ -68,6 +44,18 @@ cmd = { 'gopls' },
 	-- Server-specific settings. https://github.com/EmmyLuaLs/emmylua-analyzer-rust/blob/main/docs/config/emmyrc_json_EN.md
 }
 vim.lsp.enable("gopls")
+
+vim.lsp.config["jdtls"] = {
+cmd = { 'jdtls' },
+	-- Filetypes to automatically attach to.
+	filetypes = { 'java' },
+	root_markers = {'.git', 'pom.xml'},
+	-- Sets the workspace "root" to the directory where any of these files is found.
+	-- Files sharing a root will reuse the LSP client/connection.
+	-- Server-specific settings. https://github.com/EmmyLuaLs/emmylua-analyzer-rust/blob/main/docs/config/emmyrc_json_EN.md
+}
+vim.lsp.enable("jdtls")
+
 
 -- lsp completion see: [here](https://neovim.io/doc/user/lsp/#_lua-module:-vim.lsp.completion)
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -106,7 +94,55 @@ vim.pack.add({
 	"https://github.com/nvim-treesitter/nvim-treesitter"
 })
 
+vim.pack.add({ 'https://github.com/dmtrKovalenko/fff' })
+
+vim.api.nvim_create_autocmd('PackChanged', {
+  callback = function(ev)
+    local name, kind = ev.data.spec.name, ev.data.kind
+    if name == 'fff' and (kind == 'install' or kind == 'update') then
+      if not ev.data.active then vim.cmd.packadd('fff') end
+      require('fff.download').download_or_build_binary()
+    end
+  end,
+})
+
+vim.g.fff = {
+  lazy_sync = true,
+  debug = { enabled = true, show_scores = true },
+}
+
+vim.keymap.set('n', 'ff', function() require('fff').find_files() end, { desc = 'FFFind files' })
+
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = { 'go' },
   callback = function() vim.treesitter.start() end,
 })
+
+
+-- Keybinds
+vim.keymap.set("n", "<C-Up>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+vim.api.nvim_set_keymap("n", "gh", "^", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gl", "$", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "gh", "^", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "gl", "$", { noremap = true, silent = true })
+
+vim.keymap.set("n", "-", "<cmd>Explore<CR>") 
+vim.keymap.set("n", "nh", "<cmd>noh<CR>")
+
+vim.keymap.set("n", "<leader>f", require('fff').find_files)
+vim.keymap.set("n", "<leader>rg", require('fff').live_grep)
+
+
+-- Lsp keymaps
+vim.keymap.set("n", "gd", vim.lsp.buf.type_definition)
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation)
+vim.keymap.set("n", "rn", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>wd", vim.lsp.buf.workspace_diagnostics)
+vim.keymap.set("n", "fb", vim.lsp.buf.format)
