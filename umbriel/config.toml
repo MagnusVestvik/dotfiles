@@ -1,0 +1,92 @@
+[general]
+autostart = ["noctalia", "wezterm"]
+mod_key = "Super"
+xwayland = true
+show_cheatsheet = true
+focus_on_activate = false
+honor_restored_maximize = false
+
+
+[layout]
+mode = "scrolling"                  # "scrolling" or "dwindle"
+gap = 8                             # 0-500
+width_presets = [1, 0.5, 0.667]
+
+[layout.scrolling]
+direction = "horizontal"             # "horizontal" or "vertical"
+default_width_fraction = 0.5        # 0.1-1.0
+center_underfull_strip = true
+
+[input.keyboard]
+layout = "no"
+options = "grp:alt_shift_toggle"
+
+[input.mouse]
+natural_scroll = false
+accel_profile = "flat"  # "flat", "adaptive", or a custom curve
+sensitivity = 0.0        # -1.0 to 1.0
+scroll_wheel_step = 60  # 1-1000, pixels per step for layout-scroll-left/right
+
+
+[keybinds]
+"Mod+Return" = "spawn:wezterm start --always-new-process"
+"Mod+Q" = "window-close"
+"Mod+o" = "overview-toggle"
+"Mod+Space" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+1" = "workspace-switch:HOME"
+"Mod+2" = "workspace-switch:WEB"
+"Mod+3" = "workspace-switch:GAMING"
+"Mod+4" = "workspace-switch:OTHER"
+"Mod+l" = "window-focus-right"
+"Mod+h" = "window-focus-left"
+"Mod+j" = "window-focus-down"
+"Mod+k" = "window-focus-up"
+"Mod+f" = "window-toggle-maximize-to-edges"
+"Mod+Shift+h" = "column-move-left"
+"Mod+Shift+l" = "column-move-right"
+"Mod+Shift+f" = "window-toggle-fullscreen"
+"Mod+Shift+1" = "window-move-to-workspace:HOME"
+"Mod+Shift+2" = "window-move-to-workspace:WEB"
+"Mod+Shift+3" = "window-move-to-workspace:GAMING"
+"Mod+Shift+4" = "window-move-to-workspace:OTHER"
+"Mod+u" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+"Mod+d" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+
+
+# Volume
+"XF86AudioRaiseVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+"XF86AudioLowerVolume" = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+"Mod+XF86AudioMute" = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+# Media playback (playerctl)
+"XF86AudioPlay" = "spawn:playerctl play-pause"
+"XF86AudioNext" = "spawn:playerctl next"
+"XF86AudioPrev" = "spawn:playerctl previous"
+
+# Brightness
+"XF86MonBrightnessUp" = "spawn:brightnessctl set +5%"
+"XF86MonBrightnessDown" = "spawn:brightnessctl set 5%-"
+
+
+[output.DP-2]
+workspaces = ["HOME", "WEB", "GAMING", "OTHER"]
+
+[[workspace]]
+output = "DP-2"
+name = "HOME"
+layout.mode = "scrolling"
+
+[[workspace]]
+output = "DP-2"
+name = "WEB"
+layout.mode = "dwindle"
+
+[[workspace]]
+output = "DP-2"
+name = "GAMING"
+layout.mode = "scrolling"
+
+[[workspace]]
+output = "DP-2"
+name = "OTHER"
+layout.mode = "dwindle"
